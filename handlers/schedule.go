@@ -77,6 +77,9 @@ func (h *ScheduleHandler) Get(ctx *gin.Context) {
 			"message": "schedule not found",
 		})
 	}
+
+	ctx.JSON(http.StatusOK, schedule)
+	return
 }
 
 func (h *ScheduleHandler) List(ctx *gin.Context) {
@@ -91,6 +94,7 @@ func (h *ScheduleHandler) List(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, schedules)
+	return
 }
 
 func (h *ScheduleHandler) Delete(ctx *gin.Context) {

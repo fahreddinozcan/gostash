@@ -26,6 +26,9 @@ func main() {
 	scheduleHandler := handlers.NewScheduleHandler(db)
 
 	r.POST("/schedule", scheduleHandler.Create)
+	r.GET("/schedule/:id", scheduleHandler.Get)
+	r.GET("/schedules", scheduleHandler.List)
+	r.DELETE("/schedule/:id", scheduleHandler.Delete)
 
 	fmt.Println("Server is running on port 8080")
 	err = r.Run()
