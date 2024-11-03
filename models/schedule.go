@@ -11,6 +11,7 @@ type Schedule struct {
 	Endpoint  string    `json:"endpoint" gorm:"not null"`
 	Cron      string    `json:"cron" gorm:"not null"`
 	Body      string    `json:"body"`
+	Method    string    `json:"method"`
 	Headers   string    `json:"headers" gorm:"type:jsonb;default:'{}'"`
 	CreatedAt time.Time `json:"created_at" gorm:"autoCreateTime"`
 	LastRunAt time.Time `json:"last_run_at"`
